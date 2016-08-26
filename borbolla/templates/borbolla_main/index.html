@@ -70,7 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<a href="#" id="sidebar-button"></a>
 		<header id="logo">
 			<div id="home" class="grid__item color-9">
-				<h1><a class="link link--ilin" href="index.html"><span>Borbolla </span><span>Music</span></a></h1>
+				<h1><a class="link link--ilin" href="index"><span>Borbolla </span><span>Music</span></a></h1>
 			</div>
 		</header>
 		<div class="search-box">
@@ -116,7 +116,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div id="about" class="banner-bottom">
 			<div class="container">
 				<div class="col-md-4 bottom-left">
-					<h3>Welcome To Rock Star</h3>
+					<h3>Bienvenido a Borbolla Music</h3>
 					<p> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
 					consectetur, adipisci velit, sed quia non numquam eius modi tempora 
 					incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
@@ -126,12 +126,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-8 bottom-right">
 					<div class="bot-left">
 						<div class="progress">
-							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-								<span class="sr-only">60% Complete</span>
+							<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+								<span class="sr-only">70% Complete</span>
 							</div>
 						</div>
 						<div class="progress">
-							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
 								<span class="sr-only">60% Complete</span>
 							</div>
 						</div>
@@ -574,41 +574,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div id="contact" class="contact">
 			<div class="container">	
 				<div class="col-md-5 contact-left">
-					<h3>Information</h3>
-					<form>
-						<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-						<input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-						<textarea onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+					<h3>Informacion</h3>
+					<form method = 'POST' action = '/main/procesa_comentario/'>
+					    {% csrf_token %}
+                        
+                        {% for hidden in form.hidden_fields %}
+                            {{ hidden }}
+                        {% endfor %}
+						
+						{% for field in form.visible_fields %}
+                            {{ field.errors }}
+                            {{ field.help_text }}
+                            {{ field }}
+                        {% endfor %}
 						<input type="submit" value="Send" >
 					</form>
 				</div>
 				<div class="col-md-3 contact-left">
-					<h3>Address</h3>
-					<h2>Rock Star</h2>
-					<p>Diamond street,<br>
-						260-14 City,<br>
-						Newyork
+					<h3>Direccion</h3>
+					<h2>Borbolla Music</h2>
+					<p>Perez Trevino #142-A,<br>
+						Zona centro,<br>
+						Saltillo , Coahuila
 						</p>
-					<p>Phone no :+3402 890 679<br>
-					Fax : +5356 890 679</p>
-					<p>Email : <a href="mailto:info@example.com"> info@example.com</a></p>
+					<p>Telefono :(844)412 40 35<br>
+					Telefono2 : (844)410 58 90</p>
+					<p>Email : <a href="ventas@borbollamusicstore.com"> ventas@borbollamusicstore.com</a></p>
 					<div class="team_pos">
 						<ul>
 							<li>
 								<a href="#"><div class="morph pic fb_icon1"></div></a>
 							</li>
 							<li><a href="#"><div class="morph pic fb_icon2"></div></a></li>
-							<li><a href="#"><div class="morph pic fb_icon3"></div></a>
-							</li>
-							<li><a href="#"><div class="morph pic fb_icon4"></div></a>
-							</li>
+							
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-4 footer-grid">
-					<h3>View On Map</h3>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819"></iframe>
-					<h4>Subscribe Now</h4>
+					<h3>Ver En Mapa</h3>
+					    
+                        
+                        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div ><div id='gmap_canvas' style='height:300px;width:300px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:21,center:new google.maps.LatLng(25.424249,-100.999304),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(25.424249,-100.999304)});infowindow = new google.maps.InfoWindow({content:'<strong>Borbolla Music</strong><br>Gral. Perez Trevino 142 Zona Centro 25000 Saltillo, Coah. Mexico<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+
+
+					<h4>Subscibete Ahora</h4>
 					<form>
 						<input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}" required="">
 						<input type="submit" value=" ">
@@ -623,12 +632,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div id="widgets">
 			<nav id="mainmenu">
 				<ul>
-					<li><a href="#home" class="scroll active">Home</a></li>
-					<li><a href="#about" class="scroll">About</a></li>
-					<li><a href="#services" class="scroll">Services</a></li>
-					<li><a href="#gallery"  class="scroll">Gallery</a></li>
-					<li><a href="#team"  class="scroll">Team</a></li>
-					<li><a href="#contact"  class="scroll">Contact</a></li>
+					<li><a href="#home" class="scroll active">Inicio</a></li>
+					<li><a href="#about" class="scroll">Nosotros</a></li>
+					<li><a href="#services" class="scroll">Servicios</a></li>
+					<li><a href="#gallery"  class="scroll">Galleria</a></li>
+					<li><a href="#team"  class="scroll">Equipo</a></li>
+					<li><a href="#contact"  class="scroll">Contacto</a></li>
+					  
 				</ul>
 			</nav>
 
