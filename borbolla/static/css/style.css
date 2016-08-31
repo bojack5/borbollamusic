@@ -880,10 +880,10 @@ figure.effect-apollo:hover p {
 .gal-three {
     margin: 25px 0;
 }
-.gallery{
+.promociones{
 	padding:90px 0;
 }
-.gallery h3 {
+.promociones h3 {
     color:#E4BA1A ;
     margin-bottom: 48px;
     font-size: 46px;
@@ -1635,7 +1635,7 @@ top: 9%;
 	    margin-bottom: 23px;
 		padding: 8px 10px;
 	}
-	.singers h3,.gallery h3 {
+	.singers h3,.promociones h3 {
 		font-size: 40px;
 	}
 	.lb-album li:nth-child(2) {
@@ -1747,7 +1747,7 @@ top: 9%;
 		left: 43.5%;
 		width: 13%;
 	}
-	.instruments,.gallery {
+	.instruments,.promociones {
 		padding: 60px 0;
 	}
 	.test-left {
@@ -1992,10 +1992,10 @@ li.col-md-4.grid {
 	.services-gd h4, .gal-two h5, .test-right h5 {
 		font-size: 21px;
 	}
-	.singers h3, .gallery h3 {
+	.singers h3, .promociones h3 {
 		font-size: 35px;
 	}
-	.singers h3, .gallery h3 {
+	.singers h3, .promociones h3 {
 		font-size: 35px;
 	}
 	.ih-item.circle {
@@ -2292,7 +2292,7 @@ p.footer {
 	.instruments h3 {
 		font-size: 26px;
 	}
-	.singers h3, .gallery h3 {
+	.singers h3, .promociones h3 {
 		font-size: 30px;
 	}
 	.lb-album li:nth-child(1), .lb-album li:nth-child(2), .lb-album li:nth-child(3) {
@@ -2391,7 +2391,7 @@ header#logo h1 a {
 .instruments h3 {
     font-size: 22px;
 }
-.instruments, .gallery {
+.instruments, .promociones {
     padding: 50px 0;
 }
 .inst-grids {

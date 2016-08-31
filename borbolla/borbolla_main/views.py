@@ -1,18 +1,39 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from borbolla_main.forms import CategoriaFormulario , ComentarioFormulario
-from borbolla_main.models import Categoria
+from borbolla_main.models import Categoria , Promocion , Comentario
 
 from mail import Email
 def index(request):
     form = ComentarioFormulario()
+    lista_promociones = Promocion.objects.order_by('-id')
+    
+    superior = Comentario.objects.order_by('-fecha')[0]
 
+    promo1 = lista_promociones[0]
+    promo2 = lista_promociones[1]
+    promo3 = lista_promociones[2]
+    promo4 = lista_promociones[3]
+    promo5 = lista_promociones[4]
+    promo6 = lista_promociones[5]
+    promo7 = lista_promociones[6]
+
+    
     category_list = Categoria.objects.order_by('-likes')[:5]
 
-    context_dict = {'categorias': category_list,
+
+    context_dict = {'superior' : superior,
+                    'promo1' : promo1,
+                    'promo2' : promo2,
+                    'promo3' : promo3,
+                    'promo4' : promo4,
+                    'promo5' : promo5,
+                    'promo6' : promo6,
+                    'promo7' : promo7,
+                    'categorias': category_list,
                     'titulo': "Borbolla Music",
                     'form' : form}
-
+    
     return render(request , 'borbolla_main/index.html' , context = context_dict)
 
 def about(request):

@@ -236,7 +236,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
         </div>
-        <div id="gallery" class="gallery">
+        <div id="promociones" class="promociones">
             <div class="container">
                 <h3>Promociones</h3>
                 <section>
@@ -245,47 +245,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="gal-one">
                             <a href="#image-1">
                                 <figure class="effect-apollo">
-                                    <img src="{% static 'images/g1.jpg' %}" alt="image1">
+                                    <img src="/{{ promo1.imagen.url }}" alt="image1">
                                     <figcaption>
                                     </figcaption>           
                                 </figure>
                             </a>
                                 <div class="lb-overlay" id="image-1">
-                                        <img src="{% static 'images/g1.jpg' %}" alt="image1" />
+                                        <img src="/{{ promo1.imagen.url }}" alt="image1" />
                                         <div class="gal-info">                          
                                             <h3>Rock Star</h3>
-                                            <p>Neque porro quisquam est, qui dolorem ipsum 
-                                            quia dolor sit amet, consectetur, adipisci velit, 
-                                            sed quia non numquam eius modi tempora incidunt ut
-                                            labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                            <p> {{ promo1.texto }}
+                                            </p>
                                         </div>
-                                        <a href="index.html" class="lb-close">Close</a>
+                                        <a href="/main/#promociones" class="lb-close">Cerrar</a>
                                 </div>
                         </div>
                         <div class="gal-two">
-                            <h5>Doloremque</h5>
-                            <p>Neque porro quisquam est, qui dolorem ipsum 
-                            quia dolor sit amet, consectetur, adipisci velit 
+                            <h5>{{promo2.nombre}}</h5>
+                            <p>
+                                {{ promo2.texto }} 
                             </p>
                         </div>
                         <div class="gal-one">
                             <a href="#image-2">
                                 <figure class="effect-apollo">
-                                    <img src="{% static 'images/g2.jpg' %}" alt="image2">
+                                    <img src="/{{ promo2.imagen.url }}" alt="image2">
                                     <figcaption>
                                     </figcaption>           
                                 </figure>
                             </a>
                                 <div class="lb-overlay" id="image-2">
-                                        <img src="{% static 'images/g2.jpg' %}" alt="image2" />
+                                        <img src="/{{ promo2.imagen.url }}" alt="image2" />
                                         <div class="gal-info">                          
-                                            <h3>Rock Star</h3>
-                                            <p>Neque porro quisquam est, qui dolorem ipsum 
-                                            quia dolor sit amet, consectetur, adipisci velit, 
-                                            sed quia non numquam eius modi tempora incidunt ut
-                                            labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                            <h3>{{ promo2.nombre }}</h3>
+                                            <p>
+                                                {{ promo2.texto }}
+                                            </p>
                                         </div>
-                                        <a href="index.html" class="lb-close">Close</a>
+                                        <a href="/main/#promociones" class="lb-close">Cerrar</a>
                                 </div>
                         </div>
                     </li>
@@ -293,61 +290,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="gal-one">
                             <a href="#image-3">
                                 <figure class="effect-apollo">
-                                    <img src="{% static 'images/g3.jpg' %}" alt="image3">
+                                    <img src="/{{ promo3.imagen.url }}" alt="image3">
                                     <figcaption>
                                     </figcaption>           
                                 </figure>
                             </a>
                                 <div class="lb-overlay" id="image-3">
-                                        <img src="{% static 'images/g3.jpg' %}" alt="image3" />
+                                        <img src="/{{ promo3.imagen.url }}" alt="image3" />
                                         <div class="gal-info">                          
-                                            <h3>Rock Star</h3>
-                                            <p>Neque porro quisquam est, qui dolorem ipsum 
-                                            quia dolor sit amet, consectetur, adipisci velit, 
-                                            sed quia non numquam eius modi tempora incidunt ut
-                                            labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                            <h3>{{ promo3.nombre }}</h3>
+                                            <p>{{ promo3.texto }}</p>
                                         </div>
-                                        <a href="index.html" class="lb-close">Close</a>
+                                        <a href="/main/#promociones" class="lb-close">Cerrar</a>
                                 </div>
                         </div>
                         <div class="gal-one gal-three">
                             <a href="#image-4">
                                 <figure class="effect-apollo">
-                                    <img src="{% static 'images/g4.jpg' %}" alt="image4">
+                                    <img src="/{{ promo4.imagen.url }}" alt="image4">
                                     <figcaption>
                                     </figcaption>           
                                 </figure>
                             </a>
                                 <div class="lb-overlay" id="image-4">
-                                        <img src="{% static 'images/g4.jpg' %}" alt="image4" />
+                                        <img src="/{{ promo4.imagen.url }}" alt="image4" />
                                         <div class="gal-info">                          
-                                            <h3>Rock Star</h3>
-                                            <p>Neque porro quisquam est, qui dolorem ipsum 
-                                            quia dolor sit amet, consectetur, adipisci velit, 
-                                            sed quia non numquam eius modi tempora incidunt ut
-                                            labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                            <h3>{{ promo4.nombre }}</h3>
+                                            <p>{{ promo4.texto }}</p>
                                         </div>
-                                        <a href="index.html" class="lb-close">Close</a>
+                                        <a href="/main/#promociones" class="lb-close">Cerrar</a>
                                 </div>
                         </div>
                         <div class="gal-one">
                             <a href="#image-5">
                                 <figure class="effect-apollo">
-                                    <img src="{% static 'images/g5.jpg' %}" alt="image5">
+                                    <img src="/{{ promo5.imagen.url }}" alt="image5">
                                     <figcaption>
                                     </figcaption>           
                                 </figure>
                             </a>
                                 <div class="lb-overlay" id="image-5">
-                                        <img src="{% static 'images/g5.jpg' %}" alt="image5" />
+                                        <img src="/{{ promo5.imagen.url }}" alt="image5" />
                                         <div class="gal-info">                          
-                                            <h3>Rock Star</h3>
-                                            <p>Neque porro quisquam est, qui dolorem ipsum 
-                                            quia dolor sit amet, consectetur, adipisci velit, 
-                                            sed quia non numquam eius modi tempora incidunt ut
-                                            labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                            <h3>{{ promo5.nombre }}</h3>
+                                            <p>{{ promo5.texto }}</p>
                                         </div>
-                                        <a href="index.html" class="lb-close">Close</a>
+                                        <a href="/main/#promociones" class="lb-close">Cerrar</a>
                                 </div>
                         </div>
                     </li>
@@ -355,43 +343,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="gal-one gal-five">
                             <a href="#image-6">
                                 <figure class="effect-apollo">
-                                    <img src="{% static 'images/g6.jpg' %}" alt="image6">
+                                    <img src="/{{ promo6.imagen.url }}" alt="image6">
                                     <figcaption>
                                     </figcaption>           
                                 </figure>
                             </a>
                                 <div class="lb-overlay" id="image-6">
-                                        <img src="{% static 'images/g6.jpg' %}" alt="image6" />
+                                        <img src="/{{ promo6.imagen.url }}" alt="image6" />
                                         <div class="gal-info">                          
-                                            <h3>Rock Star</h3>
-                                            <p>{{ texto1 }}</p>
+                                            <h3>{{ promo6.nombre }}</h3>
+                                            <p>{{ promo6.texto }}</p>
                                         </div>
-                                        <a href="index.html" class="lb-close">Close</a>
+                                        <a href="/main/#promociones" class="lb-close">Cerrar</a>
                                 </div>
                         </div>
                         <div class="gal-two gal-five gal-six">
-                            <h5>Doloremque</h5>
-                            <p>{{ texto1 }}
+                            <h5> {{ promo7.nombre }}</h5>
+                            <p>{{ promo7.texto }}
                             </p>
                         </div>
                         <div class="gal-one gal-five">
                             <a href="#image-7">
                                 <figure class="effect-apollo">
-                                    <img src="{% static 'images/g7.jpg' %}" alt="image7">
+                                    <img src="/{{ promo7.imagen.url }}" alt="image7">
                                     <figcaption>
                                     </figcaption>           
                                 </figure>
                             </a>
                                 <div class="lb-overlay" id="image-7">
-                                        <img src="{% static 'images/g7.jpg' %}" alt="image7" />
+                                        <img src="/{{ promo7.imagen.url }}" alt="image7" />
                                         <div class="gal-info">                          
-                                            <h3>Rock Star</h3>
-                                            <p>Neque porro quisquam est, qui dolorem ipsum 
-                                            quia dolor sit amet, consectetur, adipisci velit, 
-                                            sed quia non numquam eius modi tempora incidunt ut
-                                            labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                            <h3> {{ promo7.nombre }}</h3>
+                                            <p>{{ promo7.texto }}</p>
                                         </div>
-                                        <a href="index.html" class="lb-close">Close</a>
+                                        <a href="/main/#promociones" class="lb-close">Cerrar</a>
                                 </div>
                         </div>
                     </li>
@@ -599,7 +584,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </p>
                     <p>Telefono :(844)412 40 35<br>
                     Telefono2 : (844)410 58 90</p>
-                    <p>Email : <a href="ventas@borbollamusicstore.com"> ventas@borbollamusicstore.com</a></p>
+                    <p>Email : <a href="mailto:ventas@borbollamusicstore.com"> ventas@borbollamusicstore.com</a></p>
                     <div class="team_pos">
                         <ul>
                             <li>
@@ -635,7 +620,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><a href="#home" class="scroll active">Inicio</a></li>
                     <li><a href="#about" class="scroll">Nosotros</a></li>
                     <li><a href="#services" class="scroll">Servicios</a></li>
-                    <li><a href="#gallery"  class="scroll">Galleria</a></li>
+                    <li><a href="#promociones"  class="scroll">Promociones</a></li>
                     <li><a href="#team"  class="scroll">Equipo</a></li>
                     <li><a href="#contact"  class="scroll">Contacto</a></li>
                       
