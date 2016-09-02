@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from borbolla_main.forms import CategoriaFormulario , ComentarioFormulario
-from borbolla_main.models import Categoria , Promocion , Comentario
+from borbolla_main.models import Categoria , Promocion , Comentario , Testimonio , Persona
 
 from mail import Email
 def index(request):
@@ -9,7 +9,9 @@ def index(request):
     lista_promociones = Promocion.objects.order_by('-id')
     
     superior = Comentario.objects.order_by('-fecha')[0]
-
+    testimonios = Testimonio.objects.order_by('-id')[:3]
+    personas = Persona.objects.order_by('-id')[:3]
+    
     promo1 = lista_promociones[0]
     promo2 = lista_promociones[1]
     promo3 = lista_promociones[2]
@@ -22,7 +24,8 @@ def index(request):
     category_list = Categoria.objects.order_by('-likes')[:5]
 
 
-    context_dict = {'superior' : superior,
+    context_dict = {'personas': personas ,
+                    'testimonios': testimonios ,
                     'promo1' : promo1,
                     'promo2' : promo2,
                     'promo3' : promo3,

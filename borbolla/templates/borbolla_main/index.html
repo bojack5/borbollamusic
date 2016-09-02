@@ -206,31 +206,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div id="services" class="instruments">
             <div class="container">
-                <h3>Music is the voice of the soul</h3>
+                <h3>Nuestro servicios</h3>
                 <div class="inst-grids">
                     <div class="col-md-3 services-gd text-center wow fadeInLeft animated" data-wow-delay=".5s">
                         <div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">
                             <a href="#" class="hi-icon"><img src="{% static 'images/icon1.png' %}" alt=" " /></a>
                         </div>
-                        <h4>Accusantium</h4>
+                        <h4>Educacion Musical</h4>
                     </div>
                     <div class="col-md-3 services-gd text-center wow fadeInLeft animated" data-wow-delay=".5s">
                         <div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">
                             <a href="#" class="hi-icon"><img src="{% static 'images/icon2.png' %}" alt=" " /></a>
                         </div>
-                        <h4>Doloremque</h4>
+                        <h4>Installacion Profesional</h4>
                     </div>
                     <div class="col-md-3 services-gd text-center wow fadeInLeft animated" data-wow-delay=".5s">
                         <div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">
                             <a href="#" class="hi-icon"><img src="{% static 'images/icon3.png' %}" alt=" " /></a>
                         </div>
-                        <h4>Voluptatem</h4>
+                        <h4>Instrumentos Musicales</h4>
                     </div>
                     <div class="col-md-3 services-gd text-center wow fadeInLeft animated" data-wow-delay=".5s">
                         <div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">
                             <a href="#" class="hi-icon"><img src="{% static 'images/icon4.png' %}" alt=" " /></a>
                         </div>
-                        <h4>Consequatur</h4>
+                        <h4>Audio Profesional</h4>
                     </div>
                     <div class="clearfix"> </div>       
                 </div>
@@ -391,168 +391,60 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 
                 <div class="callbacks_container">
                     <ul class="rslides" id="slider3">
+                    {% for testimonio in testimonios %}
                         <li>
                             <div class="test-test">
                                 <div class="col-md-4 test-left text-center">
-                                    <img src="{% static 'images/test1.png' %}" alt=" " />
+                                    <img src="{{ testimonio.foto.url }}" alt=" " />
                                 </div>
                                 <div class="col-md-8 test-right">
-                                    <p>Neque porro quisquam est, qui dolorem ipsum 
-                                                            quia dolor sit amet, consectetur, adipisci velit, 
-                                                            sed quia non numquam eius modi tempora incidunt ut
-                                                            labore et dolore magnam aliquam quaerat voluptatem.
-                                        Neque porro quisquam est, qui dolorem ipsum 
-                                                            quia dolor sit amet, consectetur, adipisci velit, 
-                                                            sed quia non numquam eius modi tempora incidunt ut
-                                                            labore et dolore magnam aliquam quaerat voluptatem.</p>
-                                    <h5> Kimberly Thompson</h5>
+                                    <p>{{ testimonio.cita }}</p>
+                                    <h5>{{ testimonio.nombre }}</h5>
                                 
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="test-test">
-                                <div class="col-md-4 test-left text-center">
-                                    <img src="{% static 'images/test2.png' %}" alt=" " />
-                                </div>
-                                <div class="col-md-8 test-right">
-                                    <p>Neque porro quisquam est, qui dolorem ipsum 
-                                                            quia dolor sit amet, consectetur, adipisci velit, 
-                                                            sed quia non numquam eius modi tempora incidunt ut
-                                                            labore et dolore magnam aliquam quaerat voluptatem.
-                                        Neque porro quisquam est, qui dolorem ipsum 
-                                                            quia dolor sit amet, consectetur, adipisci velit, 
-                                                            sed quia non numquam eius modi tempora incidunt ut
-                                                            labore et dolore magnam aliquam quaerat voluptatem.</p>
-                                    <h5> Federic Victoria</h5>
-                                
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="test-test">
-                                <div class="col-md-4 test-left text-center">
-                                    <img src="{% static 'images/test3.png' %}" alt=" " />
-                                </div>
-                                <div class="col-md-8 test-right">
-                                    <p>Neque porro quisquam est, qui dolorem ipsum 
-                                                            quia dolor sit amet, consectetur, adipisci velit, 
-                                                            sed quia non numquam eius modi tempora incidunt ut
-                                                            labore et dolore magnam aliquam quaerat voluptatem.
-                                        Neque porro quisquam est, qui dolorem ipsum 
-                                                            quia dolor sit amet, consectetur, adipisci velit, 
-                                                            sed quia non numquam eius modi tempora incidunt ut
-                                                            labore et dolore magnam aliquam quaerat voluptatem.</p>
-                                    <h5>William Patrick</h5>
-                                
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                        </li>
+                    {% endfor %}    
                     </ul>
                 </div>
             </div>
         </div>
         <div id="team" class="singers">
             <div class="container">
-                <h3>Popular Singers</h3>
+                <h3>Generico</h3>
+                {% for persona in personas %}
+
                     <div class="col-md-4 team-gs text-center">
                         <div class="ih-item circle effect1"><a href="#">
                             <div class="spinner"></div>
                             <div class="img"><img src="{% static 'images/t1.jpg' %}" alt="img"></div>
                             <div class="info">
                               <div class="info-back">
-                                <h3>Victoria</h3>
-                                <p>Description goes here</p>
+                                <h3>{{ persona.nombre }}</h3>
+                                <p>{{ persona.descripcion }}</p>
                               </div>
                             </div></a>
                             
                         </div>
-                        <p class="team-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
+                        <p class="team-text">{{ persona.texto }}</p>
                         <div class="team_pos">
                                 <ul>
                                     <li>
-                                        <a href="#"><div class="morph pic fb_icon1">
+                                        <a href="{{ persona.facebook }}" target = "_blank"><div class="morph pic fb_icon1">
                                             
                                         </div></a>
                                     </li>
                                     <li>
-                                        <a href="#"><div class="morph pic fb_icon2">
+                                        <a href="{{ persona.twitter }}" target = "_blank"><div class="morph pic fb_icon2">
                                             
                                         </div></a>
                                     </li>
-                                    <li>
-                                        <a href="#"><div class="morph pic fb_icon3">
-                                            
-                                        </div></a>
-                                    </li>
+                                    
                                 </ul>
                         </div>
                     </div>
-                    <div class="col-md-4 team-gs text-center">
-                        <div class="ih-item circle effect1"><a href="#">
-                            <div class="spinner"></div>
-                            <div class="img"><img src="{% static 'images/t2.jpg' %}" alt="img"></div>
-                            <div class="info">
-                              <div class="info-back">
-                                <h3>Federica</h3>
-                                <p>Description goes here</p>
-                              </div>
-                            </div></a></div>
-                        <p class="team-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-                        <div class="team_pos">
-                                <ul>
-                                    <li>
-                                        <a href="#"><div class="morph pic fb_icon1">
-                                            
-                                        </div></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><div class="morph pic fb_icon2">
-                                            
-                                        </div></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><div class="morph pic fb_icon3">
-                                            
-                                        </div></a>
-                                    </li>
-                                </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 team-gs text-center">
-                        <div class="ih-item circle effect1"><a href="#">
-                            <div class="spinner"></div>
-                            <div class="img"><img src="{% static 'images/t3.jpg' %}" alt="img"></div>
-                            <div class="info">
-                              <div class="info-back">
-                                <h3>Thompson</h3>
-                                <p>Description goes here</p>
-                              </div>
-                            </div></a></div>
-                        <p class="team-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-                        <div class="team_pos">
-                                <ul>
-                                    <li>
-                                        <a href="#"><div class="morph pic fb_icon1">
-                                            
-                                        </div></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><div class="morph pic fb_icon2">
-                                            
-                                        </div></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><div class="morph pic fb_icon3">
-                                            
-                                        </div></a>
-                                    </li>
-                                </ul>
-                        </div>
-                    </div>
+                {% endfor %}   
                     <div class="clearfix"> </div>
             </div>
         </div>

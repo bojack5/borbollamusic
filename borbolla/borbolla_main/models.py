@@ -22,25 +22,11 @@ class Categoria(models.Model):
 
         return self.nombre	
 
-class ImagenesEstaticas(models.Model):
-    """Base de datos para manejar las imagenes y textos 
-    de la parte superior de la pagina web , para actualizarlos 
-    y desplegar el cambio mas reciente"""
-    nombre = models.CharField(max_length = 60 , )
-    img_header = models.ImageField(upload_to = "static/imagenes_pagina_superior/", default = 'imagenes_pagina_superior/None/no-img.jpg')
-    subtitulo1 = models.CharField(max_length = 50 , )
-    texto1     = models.TextField(max_length = 200)
-    img_chica1 = models.ImageField(upload_to = "static/imagenes_pagina_superior/", default = 'imagenes_pagina_superior/None/no-img.jpg')
-    subtitulo2 = models.CharField(max_length = 50 , )
-    texto2     = models.TextField(max_length = 200)
-    img_chica2 = models.ImageField(upload_to = "static/imagenes_pagina_superior/", default = 'imagenes_pagina_superior/None/no-img.jpg')
-    subtitulo_banner = models.CharField(max_length = 50)
-    img_banner = models.ImageField(upload_to = "static/imagenes_pagina_superior/", default = 'imagenes_pagina_superior/None/no-img.jpg')
-    fecha      = models.DateTimeField(null = True , default = datetime.now)
-
-    class Meta:
-        get_latest_by = 'fecha'
-
+class Testimonio(models.Model):
+    '''Clase para modificar los testimonios ofrecidos en la pagina principal , '''
+    nombre  = models.CharField(max_length = 50)
+    foto    = models.ImageField(upload_to = "static/testimonios/", default = 'testimonios/None/no-img.jpg')
+    cita    = models.TextField()
 
 
 class Promocion(models.Model):
@@ -50,6 +36,15 @@ class Promocion(models.Model):
     imagen = models.ImageField(upload_to = "static/imagenes_promociones/", default = 'imagenes_promociones/None/no-img.jpg')
     texto  = models.TextField()
     fecha  = models.DateTimeField(null = True , default = datetime.now)
+
+class Persona(models.Model):
+    nombre = models.CharField(max_length = 50)
+    foto   = models.ImageField(upload_to = "static/personas/", default = 'imagenes_promociones/None/no-img.jpg')
+    descripcion = models.TextField(max_length = 100)
+    texto  = models.TextField(max_length = 500)
+    facebook = models.URLField()
+    twitter  = models.URLField()
+
 
 class Pagina(models.Model):
     """docstring for Pagina"""
