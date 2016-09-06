@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 from django import forms
-from borbolla_main.models import Pagina , Categoria , Comentario
+from django.contrib.auth.models import User
+from borbolla_main.models import Pagina , Categoria , Comentario , PerfilUsuario
 from datetime import datetime
 
 class CategoriaFormulario(forms.ModelForm):
@@ -54,6 +55,32 @@ class ComentarioFormulario(forms.ModelForm):
     class Meta:
         model = Comentario
         exclude = ('fecha',)
+
+class UserForm(forms.ModelForm):
+    nombre   = forms.CharField(max_length = 50 , 
+    	                       widget = forms.TextInput(attrs = {'onfocus':"this.value = ''",
+    	                     	                                 'placeholder': 'Nombre'}))
+    apellido = forms.CharField(max_length = 50 ,
+    	                       widget = forms.TextInput(attrs = {'onfocus':"this.value = ''",
+    	                     	                               'placeholder': 'Apellido'}))
+    email    = forms.EmailField(max_length = 100 , 
+    	                        widget = forms.TextInput(attrs = {'onfocus':"this.value = ''",
+    	                     	                               'placeholder': 'Email'}))
+    password = forms.CharField(widget = forms.PasswordInput(attrs = {'onfocus':"this.value = ''",
+    	                     	                               'placeholder': 'Password'}))
+
+    class Meta:
+        model = User
+        fields = ('nombre' , 'apellido' , 'email' , 'password')
+
+    
+class LoginForm(forms.Form):
+    """docstring for ContactoForm"""
+    usuario = forms.CharField(max_length = 10)
+    password = forms.CharField(max_length = 15 , widget=forms.PasswordInput())    
+
+
+
 
 
 

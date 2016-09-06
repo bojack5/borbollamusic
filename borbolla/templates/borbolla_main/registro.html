@@ -1,0 +1,40 @@
+{% extends 'borbolla_main/extra_page.html' %}
+{% load staticfiles %}
+
+{% block title %} 
+    Registro 
+{% endblock %}
+
+{% block description_subtitle %} 
+    Registro 
+{% endblock %}
+
+{% block description_text %} 
+    Introduce tus datos para ingresar a Borbolla Music Store 
+{% endblock %}
+
+{% block data_subtitle %} 
+    Registrate! 
+{% endblock %}
+
+{% block data_text %} 
+    {% if registered %}
+        <h3>Borbolla Music</h3>
+        <p><strong>
+            Gracias por registrarte!<br>
+        </strong>
+        Regresa a la <a href="/main/">Pagina principal</a> </p> 
+
+    {% else %}
+        <h3>Registrate aqui!</h3>
+        <form id="user_form" method="post" action="/main/registro/" enctype="multipart/formdata">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            
+
+            <input type="submit"  value="Registrarse"></input>  
+
+
+        </form>
+    {% endif %}    
+{% endblock %}

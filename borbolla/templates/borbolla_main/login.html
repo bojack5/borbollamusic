@@ -1,0 +1,33 @@
+{% extends 'borbolla_main/extra_page.html' %}
+{% load staticfiles %}
+
+{% block title %} 
+    borbolla | Ingresa 
+{% endblock %}
+
+{% block description_subtitle %} 
+    Ingresa 
+{% endblock %}
+
+{% block description_text %} 
+    Introduce tu usuario y contrasena para ingresar a Borbolla Music Store 
+{% endblock %}
+
+{% block data_subtitle %} 
+     Ingresa
+{% endblock %}
+
+{% block data_text %} 
+    
+        
+        <form id="user_form" method="post" action="/main/ingresar/" enctype="multipart/formdata">
+            {% csrf_token %}
+            {{ form.as_p }}
+            
+
+            <input type="submit"  value="Ingresar"></input>  
+
+
+        </form>
+        
+{% endblock %}

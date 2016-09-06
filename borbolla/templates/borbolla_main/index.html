@@ -253,7 +253,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="lb-overlay" id="image-1">
                                         <img src="/{{ promo1.imagen.url }}" alt="image1" />
                                         <div class="gal-info">                          
-                                            <h3>Rock Star</h3>
+                                            <h3>{{ promo1.nombre }}</h3>
                                             <p> {{ promo1.texto }}
                                             </p>
                                         </div>
@@ -464,7 +464,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             {{ field.help_text }}
                             {{ field }}
                         {% endfor %}
-                        <input type="submit" value="Send" >
+                        <input type="submit" value="Enviar" >
                     </form>
                 </div>
                 <div class="col-md-3 contact-left">
@@ -491,7 +491,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>Ver En Mapa</h3>
                         
                         
-                        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div ><div id='gmap_canvas' style='height:300px;width:300px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:21,center:new google.maps.LatLng(25.424249,-100.999304),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(25.424249,-100.999304)});infowindow = new google.maps.InfoWindow({content:'<strong>Borbolla Music</strong><br>Gral. Perez Trevino 142 Zona Centro 25000 Saltillo, Coah. Mexico<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+                        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+                        <div >
+                            <div id='gmap_canvas' style='height:300px;width:300px;'>
+                            </div>
+                            <style>
+                                #gmap_canvas img{max-width:none!important;background:none!important}
+                            </style>
+                        </div>
+                        <script type='text/javascript'>
+                        function init_map(){
+                            var myOptions = {zoom:21,
+                                             center:new google.maps.LatLng(25.424249,-100.999304),
+                                             mapTypeId: google.maps.MapTypeId.ROADMAP
+                                            };
+
+                                map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+                                marker = new google.maps.Marker({
+                                                                map: map,
+                                                                position: new google.maps.LatLng(25.424249,-100.999304)
+                                                                });
+
+                                infowindow = new google.maps.InfoWindow({
+                                                                content:'<strong>Borbolla Music</strong><br>Gral. Perez Trevino 142 Zona Centro 25000 Saltillo, Coah. Mexico<br>'});
+                                google.maps.event.addListener(marker, 'click', function(){
+                                                                                           infowindow.open(map,marker);
+                                                                                          });
+                                infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
+                        </script>
 
 
                     <h4>Subscibete Ahora</h4>
@@ -514,7 +541,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><a href="#services" class="scroll">Servicios</a></li>
                     <li><a href="#promociones"  class="scroll">Promociones</a></li>
                     <li><a href="#team"  class="scroll">Equipo</a></li>
+
                     <li><a href="#contact"  class="scroll">Contacto</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}"  >Salir</a></li>
+                    {% else %}
+                        <li><a href="{% url 'ingreso' %}"  >Ingresar</a></li>
+                        <li><a href="{% url 'registro' %}"  >Registro</a></li>
+                    {% endif %}    
                       
                 </ul>
             </nav>

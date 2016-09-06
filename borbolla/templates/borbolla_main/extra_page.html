@@ -3,7 +3,7 @@
 {% load staticfiles %}
 <html>
 <head>
-<title>{{ titulo }}</title>
+<title>{% block title %}{% endblock %}</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -106,91 +106,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         
         <div id="about" class="banner-bottom">
             <div class="container">
-                <div class="col-md-4 bottom-left">
-                    <h3>Bienvenido a Borbolla Music</h3>
-                    <p> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
-                    consectetur, adipisci velit, sed quia non numquam eius modi tempora 
-                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                                        
-                    </p>
-                </div>
-                <div class="col-md-8 bottom-right">
-                    <div class="bot-left">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-                                <span class="sr-only">70% Complete</span>
-                            </div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bot-right">
-                        <div class="content-item">
-                            <div class="overlay"></div>
-                              <div class="corner-overlay-content"></div>
-                              <div class="overlay-content">
-                                <h4>Repudiandae</h4>
-                                <p>Logo for a screen printing company. They wanted 
-                                a detachable recognizable brand that didn't need the name of the company.
-                                </p>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
+                
                 <div class="clearfix"></div>
             </div>
         </div>
         <div class="content-grid">
             <div class="container">
-                <div class="col-md-8 bottom-right-one">
-                    <div class="bot-right-one">
-                        <div class="content-item content-one">
-                            <div class="overlay"></div>
-                              <div class="corner-overlay-content"></div>
-                              <a href="www.google.com"><div class="overlay-content">
-                                <h4>Repudiandae</h4>
-                                <p>Logo for a screen printing company. They wanted 
-                                a detachable recognizable brand that didn't need the name of the company.
-                                </p>
-                              </div></a>
-                        </div>
-                    </div>
-                    <div class="bot-left-one">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="clearfix"></div>
+                
+                <div class="col-md-4 bottom-left-one">
+                    <h3>{% block description_subtitle %}{% endblock %}</h3>
+                    <p> {% block description_text %}{% endblock %}</p>
                 </div>
                 <div class="col-md-4 bottom-left-one">
-                    <h3>Feel The Power Of Music</h3>
-                    <p> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
-                    consectetur, adipisci velit, sed quia non numquam eius modi tempora 
-                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                                        
-                    </p>
+                    <h3>{% block data_subtitle %}{% endblock %}</h3>
+                     {% block data_text %}{% endblock %}
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -205,12 +134,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div id="widgets">
             <nav id="mainmenu">
                 <ul>
-                    <li><a href="#home" class="scroll active">Inicio</a></li>
-                    <li><a href="#about" class="scroll">Nosotros</a></li>
-                    <li><a href="#services" class="scroll">Servicios</a></li>
-                    <li><a href="#gallery"  class="scroll">Galleria</a></li>
-                    <li><a href="#team"  class="scroll">Equipo</a></li>
-                    <li><a href="#contact"  class="scroll">Contacto</a></li>
+                    <li><a href="/main/#home" >Inicio</a></li>
+                    <li><a href="/main/#about" >Nosotros</a></li>
+                    <li><a href="/main/#services" >Servicios</a></li>
+                    <li><a href="/main/#gallery"  >Galleria</a></li>
+                    <li><a href="/main/#team"  >Equipo</a></li>
+                    <li><a href="/main/#contact"  >Contacto</a></li>
+                    <li><a href="{% url 'registro' %}"  >Registro</a></li>
                       
                 </ul>
             </nav>

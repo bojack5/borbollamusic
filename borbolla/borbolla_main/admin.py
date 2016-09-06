@@ -1,5 +1,5 @@
 from django.contrib import admin
-from borbolla_main.models import Categoria , Pagina , Comentario , Promocion ,Testimonio , Persona
+from borbolla_main.models import Categoria , Pagina , Comentario , Promocion ,Testimonio , Persona , PerfilUsuario
 
 
 class PaginaAdmin(admin.ModelAdmin):
@@ -23,3 +23,4 @@ admin.site.register(Comentario , ComentarioAdmin)
 admin.site.register(Promocion , PromocionAdmin)
 admin.site.register(Testimonio , TestimonioAdmin)
 admin.site.register(Persona , PersonaAdmin)
+admin.site.register(PerfilUsuario)

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib import admin
 from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 
 from datetime import datetime
 
@@ -20,7 +21,7 @@ class Categoria(models.Model):
 
     def __str__(self):
 
-        return self.nombre	
+        return self.nombre  
 
 class Testimonio(models.Model):
     '''Clase para modificar los testimonios ofrecidos en la pagina principal , '''
@@ -59,7 +60,7 @@ class Pagina(models.Model):
 
     def __str__(self):
 
-        return self.titulo	
+        return self.titulo  
 
 
 class Comentario(models.Model):
@@ -72,6 +73,14 @@ class Comentario(models.Model):
         return self.nombre
 
 
-            		        
-		
+                            
+class PerfilUsuario(models.Model):
+    usuario = models.OneToOneField(User)
+    pagina  = models.URLField(blank = True)
+    foto = models.ImageField(upload_to = "static/Usuarios/")
+
+    def __str__(self):
+        return self.usuario.username
+
+        
 # Create your models here.
