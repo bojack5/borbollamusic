@@ -11,8 +11,8 @@ Pagina de borbolla music store
 - [x] Agregado de Comentarios a Base de datos
 - [x] Envio de notificacion HTML via mail de comentario
 - [x] inclusion de API de google Maps a la pagina
-- [ ] Area de Registro
-- [ ] Area de Login
+- [x] Area de Registro
+- [x] Area de Login
 - [ ] links hacia apartados de servicios
 - [ ] subida de pagina a servidor python anywhere
 - [ ] compra de dominio , o vinculacion de dominio existente a pythonanywhere
