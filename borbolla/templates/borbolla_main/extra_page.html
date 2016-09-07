@@ -134,12 +134,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div id="widgets">
             <nav id="mainmenu">
                 <ul>
-                    <li><a href="/main/#home" >Inicio</a></li>
-                    <li><a href="/main/#about" >Nosotros</a></li>
-                    <li><a href="/main/#services" >Servicios</a></li>
-                    <li><a href="/main/#promociones"  >Promociones</a></li>
+                    <li><a href="/main#home" >Inicio</a></li>
+                    <li><a href="/main#about" >Nosotros</a></li>
+                    <li><a href="/main#services" >Servicios</a></li>
+                    <li><a href="/main#promociones"  >Promociones</a></li>
                     
-                    <li><a href="#contact"  class="scroll">Contacto</a></li>
+                    <li><a href="/main#contact"  class="scroll">Contacto</a></li>
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'logout' %}"  >Salir</a></li>
                     {% else %}
