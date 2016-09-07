@@ -137,10 +137,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><a href="/main/#home" >Inicio</a></li>
                     <li><a href="/main/#about" >Nosotros</a></li>
                     <li><a href="/main/#services" >Servicios</a></li>
-                    <li><a href="/main/#gallery"  >Galleria</a></li>
-                    <li><a href="/main/#team"  >Equipo</a></li>
-                    <li><a href="/main/#contact"  >Contacto</a></li>
-                    <li><a href="{% url 'registro' %}"  >Registro</a></li>
+                    <li><a href="/main/#promociones"  >Promociones</a></li>
+                    
+                    <li><a href="#contact"  class="scroll">Contacto</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}"  >Salir</a></li>
+                    {% else %}
+                        <li><a href="{% url 'ingreso' %}"  >Ingresar</a></li>
+                        <li><a href="{% url 'registro' %}"  >Registro</a></li>
+                    {% endif %} 
                       
                 </ul>
             </nav>
