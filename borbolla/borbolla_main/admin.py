@@ -1,5 +1,5 @@
 from django.contrib import admin
-from borbolla_main.models import Categoria , Pagina , Comentario , Promocion ,Testimonio , Persona , PerfilUsuario
+from borbolla_main.models import Categoria , Pagina , Comentario , Promocion ,Testimonio , Persona , PerfilUsuario , Academia
 
 
 class PaginaAdmin(admin.ModelAdmin):
@@ -17,6 +17,8 @@ class TestimonioAdmin(admin.ModelAdmin):
 class PersonaAdmin(admin.ModelAdmin):
     list_display = ('nombre' ,)
 
+class AcademiaAdmin(admin.ModelAdmin):    
+    list_display = ('nombre','curso','edad','fecha')
 admin.site.register(Categoria)
 admin.site.register(Pagina,PaginaAdmin)
 admin.site.register(Comentario , ComentarioAdmin)
@@ -24,3 +26,4 @@ admin.site.register(Promocion , PromocionAdmin)
 admin.site.register(Testimonio , TestimonioAdmin)
 admin.site.register(Persona , PersonaAdmin)
 admin.site.register(PerfilUsuario)
+admin.site.register(Academia , AcademiaAdmin)

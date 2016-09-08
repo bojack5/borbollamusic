@@ -2,8 +2,50 @@
 
 from django import forms
 from django.contrib.auth.models import User
-from borbolla_main.models import Pagina , Categoria , Comentario , PerfilUsuario
+from borbolla_main.models import Pagina , Categoria , Comentario , PerfilUsuario , Academia
 from datetime import datetime
+
+
+class AcademiaForm(forms.ModelForm):
+    CHOICES = (
+    ('GE','Guitarra'),
+    ('TE','Teclado'),
+    ('BA','Bateria'),
+    ('BJ','Bajo'),
+    ('GA','Guitarra Acustica'),
+        )
+
+    CHOICES_ENTERADO = (
+        ('FB','Facebook'),
+        ('GO','Google'),
+        ('YT','Youtube'),
+        ('WW','Otro sitio Web'),
+        ('RE','Me lo recomendaron'),
+        ('AL','Ya fui alumno'),
+        ('PA','Pase por la academia y vi anuncio'),
+        ('CO','Compre un instrumento en Borbolla'),
+        ('VO','Folleto o volante'),
+        ('TV', 'TV o Radio'),)
+    nombre = forms.CharField(max_length=100, widget = forms.TextInput(attrs = {'onfocus':"this.value = ''",
+                                                               'placeholder': 'Nombre'}))
+    curso  = forms.ChoiceField(widget=forms.Select , choices=CHOICES , )
+    edad   = forms.IntegerField(widget = forms.TextInput(attrs = {'onfocus':"this.value = ''",
+                                                               'placeholder': 'Edad'}))
+    email  = forms.EmailField(max_length=50 ,  widget = forms.TextInput(attrs = {'onfocus':"this.value = ''",
+                                                               'placeholder': 'Email'}))
+    celular = forms.CharField(max_length=20 , widget = forms.TextInput(attrs = {'onfocus':"this.value = ''",
+                                                               'placeholder': 'Celular'}))
+    enterado = forms.ChoiceField(widget=forms.Select , choices=CHOICES_ENTERADO)
+
+    varioscursos = forms.BooleanField(required = False)
+    
+    variosfamiliares = forms.BooleanField(required = False)
+
+
+    
+    class Meta:
+        model = Academia
+        exclude = ('fecha',)
 
 class CategoriaFormulario(forms.ModelForm):
     nombre = forms.CharField(max_length = 128 , 

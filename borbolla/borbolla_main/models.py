@@ -82,5 +82,16 @@ class PerfilUsuario(models.Model):
     def __str__(self):
         return self.usuario.username
 
-        
+
+class Academia(models.Model):
+    
+    nombre = models.CharField(max_length=100)
+    curso  = models.CharField(max_length=2)
+    edad   = models.IntegerField(default = 0)
+    email  = models.EmailField(max_length=50)        
+    celular= models.CharField(max_length=20)
+    enterado = models.CharField(max_length=2)
+    varioscursos = models.NullBooleanField()
+    variosfamiliares =  models.NullBooleanField()
+    fecha   = models.DateTimeField(null = True , default = datetime.now)
 # Create your models here.
