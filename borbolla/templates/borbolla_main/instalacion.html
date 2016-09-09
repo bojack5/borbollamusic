@@ -1,0 +1,74 @@
+{% extends 'borbolla_main/extra_page.html' %}
+{% load staticfiles %}
+
+{% block title %} 
+    Borbolla | Instalacion
+{% endblock %}
+
+{% block description_subtitle %} 
+    Instalacion Profesional
+{% endblock %}
+
+{% block description_text %} 
+    <img src="{% static 'images/yamaha.gif' %}">    
+    <br>
+    <h4><strong>Los beneficios que ofrece la música a nuestros estudiantes se ven reflejados en diversas áreas del desarrollo humano como son:</strong><br></h4>
+    <p>
+    Intelectual (memoria, concentración, razonamiento, etc)
+    Físico (coordinación, motricidad, etc).
+    Personal (seguridad, autoestima, disciplina, etc).
+    
+
+Estas áreas se fortalecen a través de la música, dando como resultado una personalidad balanceada, lo que ayuda a la formación de mejores seres humanos.
+</p>
+
+<h4><strong>Objetivos de los alumnos Yamaha</strong><br></h4>
+    
+<p>Despertar el interés por la música
+Desarrollar el oído musical
+Aprender a leer música
+Fomentar la creatividad.</p>
+
+<h4><strong>Por qué estudiar en YAMAHA</strong></h4>
+
+    <p>
+    Horarios toda la semana Lunes a Sábado
+    Maestros Capacitados especialmente por Yamaha de México
+    El mejor Sistema de Educación Musical, con metodología japonesa.
+    Certificación con Reconocimiento Internacional.
+    Talleres, Conciertos, y oportunidades para tocar en vivo.
+    Múltiples de opciones de talleres para complementar tu formación..
+    El mejor ambiente y equipamiento de salones.
+    Oportunidad de comprar instrumentos Yamaha a precios competitivos.
+    Colegiaturas accesibles para toda la familia
+ </p>
+{% endblock %}
+
+{% block data_subtitle %} 
+   Solicita una clase muestra!
+{% endblock %}
+
+{% block data_text %} 
+    {% if registered %}
+        <h3>Academia Yamaha</h3>
+        <p><img src="{% static 'images/porquesiyamaha.jpg'%}" width="420" height="175"></p><br><br>
+        <p><strong>
+            Gracias por solicitar clase muestra!<br>
+        </strong>
+        Nos pondremos en contacto contigo cuanto antes!<br>
+        Regresa a la <a href="/main/">Pagina principal</a> </p> 
+
+    {% else %}
+        
+        
+        <form id="user_form" method="post" action="/main/academia/" enctype="multipart/formdata">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            
+
+            <p><input type="submit"  value="Registrarse"></input>  </p>
+
+
+        </form>
+    {% endif %}    
+{% endblock %}
