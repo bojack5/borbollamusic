@@ -194,6 +194,14 @@ def instalacion_view(request):
         
         if form.is_valid():
             form.save(commit = True)
+            nombre = request.POST.get('nombre','')
+            e_mail = request.POST.get('email','')
+            celular = request.POST.get('celular','')
+            proyecto = request.POST.get('descripcion_del_proyecto','')
+
+            mensaje  = proyecto + celular
+            email = Email('ventas@borbollamusicstore.com','Nueva solicitud de cotizacion de proyecto','hola como estas',nombre = nombre,email = e_mail,mensaje = mensaje)
+
 
             enviado = True
             return render(request , 
