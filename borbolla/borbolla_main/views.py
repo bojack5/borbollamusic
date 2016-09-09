@@ -58,7 +58,7 @@ def procesa_comentario(request):
             nombre = request.POST.get('nombre','')
             e_mail = request.POST.get('email','')
             mensaje = request.POST.get('mensaje','')
-            email = Email('luis@4suredesign.com','Nuevo mensaje de pagina web','hola como estas',nombre = nombre,email = e_mail,mensaje = mensaje)
+            email = Email('ventas@borbollamusicstore.com','Nuevo mensaje de pagina web','hola como estas',nombre = nombre,email = e_mail,mensaje = mensaje)
             return index(request)
         else:
             print(form.errors)
