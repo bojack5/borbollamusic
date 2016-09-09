@@ -2,8 +2,24 @@
 
 from django import forms
 from django.contrib.auth.models import User
-from borbolla_main.models import Pagina , Categoria , Comentario , PerfilUsuario , Academia
+from borbolla_main.models import Pagina , Categoria , Comentario , PerfilUsuario , Academia , Instalacion
 from datetime import datetime
+
+class InstalacionForm(forms.ModelForm):
+    nombre = forms.CharField(max_length=100, widget = forms.TextInput(attrs = {'onfocus':"this.value = ''",
+                                                               'placeholder': 'Nombre'}))
+    email  = forms.EmailField(max_length=50 ,  widget = forms.TextInput(attrs = {'onfocus':"this.value = ''",
+                                                               'placeholder': 'Email'}))
+    celular = forms.CharField(max_length=20 , widget = forms.TextInput(attrs = {'onfocus':"this.value = ''",
+                                                               'placeholder': 'Celular'}))    
+    
+    descripcion_del_proyecto = forms.CharField(max_length  = 200 ,
+                             
+                             widget = forms.Textarea(attrs = {'onfocus':"this.value = ''" ,
+                                                                'placeholder': 'Breve descripcion del proyecto'}))
+    class Meta:
+        model = Instalacion
+        exclude = ('fecha',)
 
 
 class AcademiaForm(forms.ModelForm):

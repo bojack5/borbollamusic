@@ -95,3 +95,17 @@ class Academia(models.Model):
     variosfamiliares =  models.NullBooleanField()
     fecha   = models.DateTimeField(null = True , default = datetime.now)
 # Create your models here.
+
+class Instalacion(models.Model):
+    nombre = models.CharField(max_length=100)
+    email  = models.EmailField(max_length=50)
+    celular = models.CharField(max_length=20)
+    descripcion_del_proyecto = models.TextField()
+    fecha   = models.DateTimeField(null = True , default = datetime.now)
+    class Meta:
+        verbose_name = "Instalacion"
+        verbose_name_plural = "Instalaciones"
+
+    def __str__(self):
+        return (self.nombre,self.celular,self.email)
+    

@@ -113,7 +113,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="content-grid">
 
             <div class="container">
-                <img src="{% static 'images/porquesiyamaha.jpg' %}" height="400" width="960">
+                {% block banner %}{% endblock %}
+                
                 <div class="col-md-4 bottom-left-one">
                     <h3>{% block description_subtitle %}{% endblock %}</h3>
                     <p> {% block description_text %}{% endblock %}</p>

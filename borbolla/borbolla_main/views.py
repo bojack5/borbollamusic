@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login ,logout
 from django.core.urlresolvers import reverse
 
-from borbolla_main.forms import CategoriaFormulario , ComentarioFormulario , UserForm , LoginForm , AcademiaForm
+from borbolla_main.forms import CategoriaFormulario , ComentarioFormulario , UserForm , LoginForm , AcademiaForm , InstalacionForm
 from borbolla_main.models import Categoria , Promocion , Comentario , Testimonio , Persona
 
 
@@ -147,7 +147,7 @@ def logout_view(request):
 def academia_view(request):
     muestra = False
     if request.method == 'POST':
-        form = AcademiaForm(request.POST)
+        form = InstalacionForm(request.POST)
         
         if form.is_valid():
             form.save(commit = True)
@@ -168,3 +168,29 @@ def academia_view(request):
                   'borbolla_main/academia.html' ,
                   {'user_form': form,
                   'registered': muestra})
+
+def instalacion_view(request):
+    enviado = False
+    if request.method == 'POST':
+        form = InstalacionForm(request.POST)
+        
+        if form.is_valid():
+            form.save(commit = True)
+
+            enviado = True
+            return render(request , 
+                  'borbolla_main/instalacion.html' ,
+                  {'user_form': form,
+                  'registered': enviado}) 
+            
+        else:
+            print(form.errors ,)
+    else:
+        form = InstalacionForm()
+        
+
+    return render(request , 
+                  'borbolla_main/instalacion.html' ,
+                  {'user_form': form,
+                  'registered': enviado})
+

@@ -10,63 +10,46 @@
 {% endblock %}
 
 {% block description_text %} 
-    <img src="{% static 'images/yamaha.gif' %}">    
-    <br>
-    <h4><strong>Los beneficios que ofrece la música a nuestros estudiantes se ven reflejados en diversas áreas del desarrollo humano como son:</strong><br></h4>
-    <p>
-    Intelectual (memoria, concentración, razonamiento, etc)
-    Físico (coordinación, motricidad, etc).
-    Personal (seguridad, autoestima, disciplina, etc).
-    
-
-Estas áreas se fortalecen a través de la música, dando como resultado una personalidad balanceada, lo que ayuda a la formación de mejores seres humanos.
-</p>
-
-<h4><strong>Objetivos de los alumnos Yamaha</strong><br></h4>
-    
-<p>Despertar el interés por la música
-Desarrollar el oído musical
-Aprender a leer música
-Fomentar la creatividad.</p>
-
-<h4><strong>Por qué estudiar en YAMAHA</strong></h4>
-
-    <p>
-    Horarios toda la semana Lunes a Sábado
-    Maestros Capacitados especialmente por Yamaha de México
-    El mejor Sistema de Educación Musical, con metodología japonesa.
-    Certificación con Reconocimiento Internacional.
-    Talleres, Conciertos, y oportunidades para tocar en vivo.
-    Múltiples de opciones de talleres para complementar tu formación..
-    El mejor ambiente y equipamiento de salones.
-    Oportunidad de comprar instrumentos Yamaha a precios competitivos.
-    Colegiaturas accesibles para toda la familia
- </p>
+    <h2>Venta e instalacion de audio profesional!</h2>
+   <p>
+       Nos especializamos en instalaciones en todo tipo de lugares , naves industriales , hoteles , cafeterias , etc 
+       si requieres una cotizacion , dejanos tus datos asi como una breve descripcion del proyecto, y 
+       con gusto te atenderemos lo mas rapido posible  
+  <br><br>    
+   <h4>Si lo prefieres llamanos!</h4>
+   <h2>(844) 412-40-35</h2>
+   </p>
 {% endblock %}
 
 {% block data_subtitle %} 
-   Solicita una clase muestra!
+Proyecto
+   
 {% endblock %}
-
+{% block banner %} 
+    <img src="{% static 'images/instalacion.jpg' %}" height="400" width="960">
+{% endblock %}
 {% block data_text %} 
     {% if registered %}
-        <h3>Academia Yamaha</h3>
-        <p><img src="{% static 'images/porquesiyamaha.jpg'%}" width="420" height="175"></p><br><br>
+        <h3>Borbolla Music</h3>
+        
         <p><strong>
-            Gracias por solicitar clase muestra!<br>
-        </strong>
-        Nos pondremos en contacto contigo cuanto antes!<br>
-        Regresa a la <a href="/main/">Pagina principal</a> </p> 
+            <h4>Tu mensaje ha sido enviado a nuestros vendedores </h4> <br></strong>
+            Nos pondremos en contacto contigo cuanto antes!<br>
+        Regresa a la <h1><a href="/main/">Pagina principal</a></h1> </p> 
+            
+        
+        <img src="{% static 'images/operadora.jpg'%}" height="600" width="400">
+        
 
     {% else %}
         
         
-        <form id="user_form" method="post" action="/main/academia/" enctype="multipart/formdata">
+        <form id="user_form" method="post" action="/main/instalacion/" enctype="multipart/formdata">
             {% csrf_token %}
             {{ user_form.as_p }}
             
 
-            <p><input type="submit"  value="Registrarse"></input>  </p>
+            <p><input type="submit"  value="Enviar"></input>  </p>
 
 
         </form>
