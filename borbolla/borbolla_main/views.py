@@ -147,11 +147,29 @@ def logout_view(request):
 def academia_view(request):
     muestra = False
     if request.method == 'POST':
-        form = InstalacionForm(request.POST)
+        form = AcademiaForm(request.POST)
         
         if form.is_valid():
             form.save(commit = True)
+            nombre = request.POST.get('nombre','')
+            curso  = request.POST.get('curso','')
+            edad   = request.POST.get('edad','')
+            e_mail = request.POST.get('email','')
+            celular = request.POST.get('celular','')
+            enterado = request.POST.get('enterado','')
+            varioscursos = request.POST.get('varioscursos','')
+            variosfamiliares = request.POST.get('variosfamiliares','')
 
+            template = '''\nnombre: %s\ncurso :%s\nedad:%s\nemail:%s\ncelular:%s\nenterado%s\n'''
+            
+            mensaje = template%(nombre,
+                                curso,
+                                edad,
+                                e_mail,
+                                celular,
+                                enterado,
+                                )
+            email = Email('yamaha.saltillo@hotmail.com','Nueva solicitud de clase de muestra','hola como estas',nombre = nombre,email = e_mail,mensaje = mensaje)
             muestra = True
             return render(request , 
                   'borbolla_main/academia.html' ,
@@ -194,3 +212,13 @@ def instalacion_view(request):
                   {'user_form': form,
                   'registered': enviado})
 
+def instrumentos_view(request):
+    return render(request , 
+                  'borbolla_main/instrumentos.html' ,
+                  {})
+
+def audio_view(request):
+    return render(request , 
+                  'borbolla_main/audio.html' ,
+                  {})    
+    

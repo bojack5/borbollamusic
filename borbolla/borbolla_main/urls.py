@@ -11,6 +11,8 @@ urlpatterns = [
     url(r'^salir/$', views.logout_view , name = 'logout'),
     url(r'^academia/$', views.academia_view , name = 'academia'),
     url(r'^instalacion/$', views.instalacion_view , name = 'instalacion'),
+    url(r'^instrumentos/$', views.instrumentos_view , name = 'instrumentos'),
+    url(r'^audio/$', views.audio_view , name = 'audio'),
     #url(r'^category/(?P<category_name_slug>[\w\-]+)/$',
         #views.show_category, name='show_category'),
 

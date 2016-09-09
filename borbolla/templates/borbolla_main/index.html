@@ -139,9 +139,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="container">
                 <div class="col-md-4 bottom-left">
                     <h3>Bienvenido a BORBOLLA Music</h3>
-                    <p> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
-                    consectetur, adipisci velit, sed quia non numquam eius modi tempora 
-                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    <p> Borbolla Music Store es una tienda de instrumentos
+                    musicales , y equipo de sonido , apasionados por la 
+                    musica , y la satisfaccion al cliente
                                         
                     </p>
                 </div>
@@ -168,9 +168,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="overlay"></div>
                               <div class="corner-overlay-content"></div>
                               <div class="overlay-content">
-                                <h4>Repudiandae</h4>
-                                <p>Logo for a screen printing company. They wanted 
-                                a detachable recognizable brand that didn't need the name of the company.
+                                <h4>Fender</h4>
+                                <p>Fender es particularmente conocida por llevar las guitarras eléctricas de cuerpo macizo a las masas. Fender creó la primera guitarra eléctrica de cuerpo sólido de venta masiva, la Telecaster 
                                 </p>
                               </div>
                         </div>
@@ -188,9 +187,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="overlay"></div>
                               <div class="corner-overlay-content"></div>
                               <div class="overlay-content">
-                                <h4>Repudiandae</h4>
-                                <p>Logo for a screen printing company. They wanted 
-                                a detachable recognizable brand that didn't need the name of the company.
+                                <h4>Yamaha</h4>
+                                <p>Los pianos verticales de serie U de Yamaha han sido durante mucho tiempo la primera opción de las instituciones educativas, los músicos profesionales y los pianistas exigentes que tocan en sus casas.
                                 </p>
                               </div>
                         </div>
@@ -216,11 +214,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="clearfix"></div>
                 </div>
                 <div class="col-md-4 bottom-left-one">
-                    <h3>Feel The Power Of Music</h3>
-                    <p> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
-                    consectetur, adipisci velit, sed quia non numquam eius modi tempora 
-                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                                        
+                    <h3>Siente el poder de la musica</h3>
+                    <p> 
+                    Diferenciate del resto , adquiriendo instrumentos de primera calidad al mejor precio , 
+                    echa un vistazo a nuestra amplia gama de marcas que manejamos , aparte de servicio de 
+                    instalacion y/o capacitacion.                                         
                     </p>
                 </div>
                 <div class="clearfix"></div>
@@ -244,13 +242,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="col-md-3 services-gd text-center wow fadeInLeft animated" data-wow-delay=".5s">
                         <div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">
-                            <a href="#" class="hi-icon"><img src="{% static 'images/icon3.png' %}" alt=" " /></a>
+                            <a href="/main/instrumentos/" class="hi-icon"><img src="{% static 'images/icon3.png' %}" alt=" " /></a>
                         </div>
                         <h4>Instrumentos Musicales</h4>
                     </div>
                     <div class="col-md-3 services-gd text-center wow fadeInLeft animated" data-wow-delay=".5s">
                         <div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a">
-                            <a href="#" class="hi-icon"><img src="{% static 'images/icon4.png' %}" alt=" " /></a>
+                            <a href="/main/audio/" class="hi-icon"><img src="{% static 'images/icon4.png' %}" alt=" " /></a>
                         </div>
                         <h4>Audio Profesional</h4>
                     </div>
@@ -408,68 +406,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"> </div>
             </div>
         </div>
-        <div class="testimonials">
-            <div class="container">
-                
-                <div class="callbacks_container">
-                    <ul class="rslides" id="slider3">
-                    {% for testimonio in testimonios %}
-                        <li>
-                            <div class="test-test">
-                                <div class="col-md-4 test-left text-center">
-                                    <img src="{{ testimonio.foto.url }}" alt=" " />
-                                </div>
-                                <div class="col-md-8 test-right">
-                                    <p>{{ testimonio.cita }}</p>
-                                    <h5>{{ testimonio.nombre }}</h5>
-                                
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                        </li>
-                    {% endfor %}    
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div id="team" class="singers">
-            <div class="container">
-                <h3>Generico</h3>
-                {% for persona in personas %}
-
-                    <div class="col-md-4 team-gs text-center">
-                        <div class="ih-item circle effect1"><a href="#">
-                            <div class="spinner"></div>
-                            <div class="img"><img src="{% static 'images/t1.jpg' %}" alt="img"></div>
-                            <div class="info">
-                              <div class="info-back">
-                                <h3>{{ persona.nombre }}</h3>
-                                <p>{{ persona.descripcion }}</p>
-                              </div>
-                            </div></a>
-                            
-                        </div>
-                        <p class="team-text">{{ persona.texto }}</p>
-                        <div class="team_pos">
-                                <ul>
-                                    <li>
-                                        <a href="{{ persona.facebook }}" target = "_blank"><div class="morph pic fb_icon1">
-                                            
-                                        </div></a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ persona.twitter }}" target = "_blank"><div class="morph pic fb_icon2">
-                                            
-                                        </div></a>
-                                    </li>
-                                    
-                                </ul>
-                        </div>
-                    </div>
-                {% endfor %}   
-                    <div class="clearfix"> </div>
-            </div>
-        </div>
+        
         <div id="contact" class="contact">
             <div class="container"> 
                 <div class="col-md-5 contact-left">
