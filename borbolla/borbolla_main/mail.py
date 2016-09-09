@@ -30,7 +30,7 @@ class Email(object):
        Mensaje: %s<br>
        .
     </p>
-    <p> Alternativamente puedes checarlo en la pagina de administracion <a href = '/admin/'>pulsando aqui</a>
+    <p> Alternativamente puedes checarlo en la pagina de administracion <a href = 'borbolla.pythonaywhere.com/admin/'>pulsando aqui</a>
     <img src="http://cdn.gq.com.mx/uploads/images/thumbs/mx/gq/2/s/2016/22/las_mejores_fotos_de_megan_fox_135912044_900x1345.jpg" alt="Mountain View" style="width:304px;height:228px;">
   </body>
 </html>
