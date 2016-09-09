@@ -169,7 +169,7 @@ def academia_view(request):
                                 celular,
                                 enterado,
                                 )
-            email = Email('yamaha.saltillo@hotmail.com','Nueva solicitud de clase de muestra','hola como estas',nombre = nombre,email = e_mail,mensaje = mensaje)
+            email = Email('yamahasaltillo@hotmail.com','Nueva solicitud de clase de muestra','hola como estas',nombre = nombre,email = e_mail,mensaje = mensaje)
             muestra = True
             return render(request , 
                   'borbolla_main/academia.html' ,
