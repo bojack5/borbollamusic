@@ -503,6 +503,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     <li><a href="#contact"  class="scroll">Contacto</a></li>
                     {% if user.is_authenticated %}
+                        {% if user.is_staff %}
+                            <li><a href="/admin/"  >Administracion</a></li>
+                        {% endif %}    
                         <li><a href="{% url 'logout' %}"  >Salir</a></li>
                     {% else %}
                         <li><a href="{% url 'ingreso' %}"  >Ingresar</a></li>

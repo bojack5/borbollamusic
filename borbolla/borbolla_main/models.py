@@ -107,5 +107,5 @@ class Instalacion(models.Model):
         verbose_name_plural = "Instalaciones"
 
     def __str__(self):
-        return (self.nombre,self.celular,self.email)
+        return (self.nombre)	
     
