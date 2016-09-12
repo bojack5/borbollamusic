@@ -25,7 +25,7 @@ class Email(object):
   <head></head>
   <body>
     
-    <p>Se recibio un mensaje nuevo en la pagina web de Borbolla Music Store!<br>
+    <p>Se recibio un mensaje nuevo de la pagina web de Borbolla Music Store!<br>
        Nombre : %s<br>
        Email  : %s<br>
        Mensaje: %s<br>
